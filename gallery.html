@@ -1,0 +1,55 @@
+<div class="galeri-container">
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <nav class="navbar">
+        <img src="images/logo.png" alt="Logo Perusahaan" class="logo">
+        
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="profile.html">Profil</a>
+            <a href="gallery.html">Galeri</a>
+            <a href="blog.html">Blog</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="contact.html">Hubungi Kami</a>
+            <a href="404.html">404</a>
+        </div>
+        <div class="hamburger">&#9776;</div>
+    </nav>
+</head>
+<section id="gallery" class="gallery">
+    <h2>Galeri</h2>
+    <div class="gallery-grid">
+        <img src="images/gambar1.jpg" class="gallery-item" alt="Gambar 1" />
+        <img src="images/gambar2.jpg" class="gallery-item" alt="Gambar 2" />
+        <img src="images/gambar3.jpg" class="gallery-item" alt="Gambar 3" />
+    </div>
+    <div class="overlay" id="overlay">
+        <span class="close" id="close">&times;</span>
+        <img class="overlay-image" id="overlay-image" src="" alt="Besar" />
+    </div>
+</section>
+
+<script>
+    const overlay = document.getElementById('overlay');
+    const overlayImage = document.getElementById('overlay-image');
+    const close = document.getElementById('close');
+
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('click', (event) => {
+            overlay.style.display = 'flex'; // Tampilkan overlay
+            overlayImage.src = event.target.src; // Set gambar overlay sesuai gambar yang diklik
+        });
+    });
+
+    close.addEventListener('click', () => {
+        overlay.style.display = 'none'; // Sembunyikan overlay saat tombol close diklik
+    });
+
+    overlay.addEventListener('click', () => {
+        overlay.style.display = 'none'; // Sembunyikan overlay saat area overlay diklik
+    });
+</script>
+</div>
+<footer>
+    <p>&copy; 2024 Website Bisnis</p>
+</footer>
